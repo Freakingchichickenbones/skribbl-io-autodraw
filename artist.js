@@ -88,7 +88,7 @@ let createArtist = function (canvas, toolbar, colorHelper) {
             let commands = [];
 
             for (let diameter of toolbar.getPenDiameters()
-                .filter(d => d > 4) // Diameter 4 generates too many draw commands. Disable it until drawing is more efficient.
+                .filter(4) // Diameter 4 generates too many draw commands. Disable it until drawing is more efficient.
                 .sort().reverse()) {
                 let effectiveResolution = {
                     width: canvas.size.width / diameter,
